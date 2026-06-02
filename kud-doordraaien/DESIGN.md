@@ -95,6 +95,38 @@ verslaat (de vlakke finale-bonus domineert). De Stem-laag verschuift waarde teru
 **bouwen en slim afsluiten** van verhaallijnen — samen met de voorgestelde P0-fix (finale-bonus =
 lengte van je langste gesloten lijn i.p.v. vaste +5) wordt scoren weer de hoofdmoot.
 
+---
+
+# v0.5 — Waarom een lijn doorzetten? (de Beat-grammatica)
+
+**Eerlijke diagnose.** In v0.3–v0.4 is een verhaallijn mechanisch nog vooral een **teller**
+(kleur + lengte). Doorzetten = kaarten dumpen + de puntenpot groter maken die je bij EINDE claimt.
+Een reeks gekoppelde kaarten *vormt* dus nog geen coherente, grappige aflevering — het is een rij
+losse scènes met een lengtescore. Dat is het gat dat opvalt: er is wél een *mechanisch* doel
+(bouwen vs. stelen, melken vs. racen), maar nog geen **narratief** doel.
+
+**De fix — een lijn moet zich lezen als een mini-aflevering.** Naast de kleur (= *kan het fysiek
+koppelen?*) krijgt elke scène een **beat-type** (= *is het een goede aflevering?*):
+**OPZET → ESCALATIE → WENDING → PUNCHLINE**. Cappen = de lijn **uitzenden**: je leest alle quotes
+op volgorde hardop voor. Hoe beter de boog, hoe meer kijkcijfers:
+
+| Voorwaarde bij EINDE | Beloning |
+|---|---|
+| Basis | kijkcijfers = lengte |
+| Lijn bevat een **OPZET** | +2 |
+| Per **ESCALATIE/WENDING** ertussen | +1 |
+| **Perfecte boog**: OPZET → … → PUNCHLINE op volgorde | **×2** |
+| Running-gag ↺ (≥2 / ≥3 gelijke gag) | ×1,5 / ×2 (stapelt) |
+
+**Effect:** vier kaarten als nette boog scoren bv. (4+2+2)×2 = **16**; dezelfde vier lukraak
+gedumpt = **4**. Doorzetten heeft nu een doel: je **monteert de best mogelijke grap**, en de
+gekoppelde kaarten *vormen* bij uitzending een echte 4-panel KUD-strip. Dit maakt scoren
+dominanter dan de kale dump-race (de hoofdkritiek uit de beta-test) en geeft de quotes een functie.
+
+**Ontwerp-fork (bewust):** hoe strenger je de boog eist, hoe meer het een montage-**puzzel** wordt
+en hoe minder een chaos-dumpspel. Lichte variant = alleen de ×2 perfecte-boog-bonus; zware variant =
+incoherente lijnen scoren halve punten. Te playtesten.
+
 ### Echte quotes (belangrijk)
 De regels op de conceptkaarten zijn **origineel in KUD-stijl** geschreven als **placeholder** — het
 zijn **geen** letterlijke serie-citaten (auteursrecht). Elke kaart heeft een quote-**slot**; de
