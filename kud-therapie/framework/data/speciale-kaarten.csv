@@ -1,0 +1,11 @@
+id,type,bijschrift,fragment,bron,zekerheid,score,effect,notitie
+SPC-001,speciaal,"Zwoele Man",zwoele-man.png,"Zwoele man",geverifieerd,,"Speel als Behandeling. Wint deze strip? Dan krijg je 2 Diploma's i.p.v. 1 — extra zwoel.","Bonuskaart"
+SPC-002,speciaal,"Te laat",te-laat.png,"Te laat",onzeker,,"Speel ná het onthullen: trek je ingelegde Behandeling terug en leg een nieuwe handkaart in.","Reactieve omruil"
+SPC-003,speciaal,"Djingle Djengle",djingle-djengle.png,"Djingle Djengle-sessie",geverifieerd,,"Je moet je bijschrift zíngen. Lacht de Therapeut? Dan ligt jouw strip bovenaan bij het oordeel.","Party-mechaniek"
+SPC-004,speciaal,"Ik snap het zelf ook niet helemaal",ik-snap-het-niet.png,"Peter Lub-citaat",geverifieerd,,"Joker-bijschrift: plak deze bij je Behandeling om die nóg absurder te maken. Telt als extra paneel.","Geverifieerd citaat"
+SPC-005,speciaal,"pilon",pilon.png,"pilon",geverifieerd,,"Leg een pilon als Behandeling. Pure onzin. De Therapeut mág deze strip niet negeren bij het oordeel.","Running gag"
+SPC-006,speciaal,"Nieuw! (Plot Twist)",nieuw.png,"Nieuw!",origineel,,"Speel vóór het onthullen: vervang de Patiënt-kaart door de bovenste van de Patiënt-stapel. Iedereen mag zijn Behandeling wisselen.","Mid-ronde twist"
+SPC-007,speciaal,"Anoniem te werk",anoniem.png,"Peter Lub-citaat",geverifieerd,,"Deze ronde noemt niemand namen. De Therapeut oordeelt volledig blind; winnaar onthult zich daarna.","Variant-trigger"
+SPC-008,speciaal,"Supermegaberenbonken",supermegaberenbonken.png,"Supermegaberenbonken",origineel,,"Speel om een gelijkspel te forceren: als jij niet wint, mag niemand deze ronde een Diploma pakken.","Spoiler-kaart"
+SPC-009,speciaal,"Konijntje",konijntje.png,"Konijntje (Aka The Junkies)",geverifieerd,,"Speel bij je Behandeling. Zo schattig dat de Therapeut hardop 'awww' moet zeggen voor hij oordeelt.","Iconisch fragment"
+SPC-010,speciaal,"25 seconden lang",25secondenlang.png,"#25secondenlang",origineel,,"De Therapeut heeft 25 seconden om te oordelen (laat iemand aftellen). Geen keuze op tijd? Jij wint.","Tijdsdruk"
