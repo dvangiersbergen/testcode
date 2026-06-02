@@ -171,14 +171,14 @@ CARDS=[
       title="Mijnwerkers",left=["G","G"],right=["G"],
       quote="Dieper graven loste nog nooit iets op.",
       rule="Voegt twee draden samen: −1 open uiteinde."),
- dict(id="07_einde_roze",type_label="KOP",glyph="■",accent="R",vid="boLkKd3W2sc",
+ dict(id="07_einde_roze",type_label="Aftiteling · KOP",glyph="⏹",accent="R",vid="boLkKd3W2sc",
       title="Drama",left=["R"],right=["CAP"],qtag="punch",
       quote="En scène. Niemand klapte.",
-      rule="KOP: sluit een open uiteinde af. PUNCHLINE na een OPZET? Gooi 1 extra weg."),
- dict(id="08_einde_blauw",type_label="KOP",glyph="■",accent="B",vid="tMGYPMJJm3o",
+      rule="Einde-filmpje: sluit een roze uiteinde af. PUNCHLINE na een OPZET? Gooi 1 extra weg."),
+ dict(id="08_einde_blauw",type_label="Aftiteling · KOP",glyph="⏹",accent="B",vid="tMGYPMJJm3o",
       title="Comazuipen",left=["B"],right=["CAP"],qtag="punch",
       quote="Morgen weten we nergens meer van.",
-      rule="KOP: cap een blauw uiteinde — ook eentje die de ander bouwde."),
+      rule="Einde-filmpje: cap een blauw uiteinde — ook eentje die de ander bouwde."),
  dict(id="09_pilon_wild",type_label="Pilon · wild",glyph="★",accent="*",vid="IpELRbaCzq8",
       title="Politieschets",left=["*"],right=["*"],gag="Pilon",
       quote="Past overal. Net als de pilon.",
@@ -204,15 +204,18 @@ ACTIONS=[
 
 def make_leader():
     base,pad=shadow_card(); card=Image.new("RGBA",(W,H),(0,0,0,0))
-    header(card,"Leader · START","◆",THREADS["*"][1])
-    scene(card,None,(240,196,46)); d=ImageDraw.Draw(card); x0,y0,x1,y1=ART
-    d.text((x0+30,y0+30),"VORIGE KEER",font=font(30),fill=(235,235,235,255))
-    d.text((x0+30,y0+70),"IN KUD…",font=font(54),fill=(255,255,255,255))
-    subtitle(card,"Er gebeurde van alles. En toch niks.",None)
+    header(card,"Video-begin · INTRO","▶",THREADS["*"][1])
+    scene(card,None,(240,196,46)); d=ImageDraw.Draw(card,"RGBA"); x0,y0,x1,y1=ART
+    # grote play-knop (video-startscherm-look)
+    cx,cy=(x0+x1)//2,(y0+y1)//2-10
+    d.ellipse([cx-78,cy-78,cx+78,cy+78],fill=(255,255,255,40),outline=(255,255,255,235),width=6)
+    d.polygon([(cx-26,cy-40),(cx-26,cy+40),(cx+44,cy)],fill=(255,255,255,245))
+    d.text((x0+30,y0+24),"KUD — VIDEO BEGINT",font=font(30),fill=(255,255,255,255))
+    subtitle(card,"Hier begint de ketting. Klik overal een koord aan.",None)
     port_tab(card,"L",0,1,"G"); port_tab(card,"R",0,1,"R")
-    for cx,c in [(W//2-120,"B"),(W//2+120,"Y")]:
-        _,col=THREADS[c]; rrect(d,[cx-46,138,cx+46,196],14,fill=col+(255,))
-    footer(card,"Starttegel","Vier open draden — klik meteen overal een koord aan.")
+    for cx2,c in [(W//2-120,"B"),(W//2+120,"Y")]:
+        _,col=THREADS[c]; rrect(d,[cx2-46,138,cx2+46,196],14,fill=col+(255,))
+    footer(card,"Video-begin (intro)","Vier open uiteinden — vanaf hier groeit de aflevering.")
     base.alpha_composite(card,(pad,pad))
     out=Image.new("RGB",base.size,PAPER); out.paste(base,(0,0),base)
     p=PNG/"00_leader.png"; out.save(p); return p

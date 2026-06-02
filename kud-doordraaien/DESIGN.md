@@ -23,9 +23,15 @@ uiteinde** van dezelfde kleur.
 | **Kleurwissel** | Verlengt maar verandert de kleur — **beëindigt je run** deze beurt (zie Beurt). | 0 |
 | **Vertakking (Y)** | Draad splitst in twee. | **+1** |
 | **Samenkomst** | Twee draden komen samen. | **−1** |
-| **KOP / EINDE** | Sluit een uiteinde af (capt de draad). | **−1** |
+| **KOP = AFTITELING** (meerdere) | Einde-filmpje: sluit een open uiteinde af. | **−1** |
 | **Pilon (wild)** | Past op elke kleur. | 0 |
 | **Actie** | Cut/Hatch/Peek/Swap/Dig — zie onder. | wisselt |
+
+**Een strook = één KUD-video.** Hij begint bij de **Video-begin-kaart** (de intro) en is "af" zodra
+je 'm met een **Aftiteling (KOP)** afsluit. Net als in Tapeworm zijn er **meerdere** koppen/aftitelingen
+in het deck. Cap je een strook af, dan mag je de hele video van intro → … → aftiteling **hardop
+voorlezen** — de afgemonteerde aflevering als beloning voor de lol (scoort niets; je bent gewoon
+weer kaarten kwijt).
 
 ## Fysiek concept: "Koord & Klik" (de magneetjes)
 Elke poort heeft een magneetje; tussen passende poorten klik je een **gekleurd koord** met een
@@ -34,7 +40,9 @@ bevredigende *klik*. **Open uiteinde = los magneetje** → je ziet direct waar d
 editie met magneten/koorden; print-and-play valt terug op gekleurde randen (mechanisch identiek).
 
 ## Opzet
-1. Leg de **Leader-starttegel** in het midden: vier open uiteinden, één per kleur.
+1. Leg de **Video-begin-kaart** (de KUD-intro) in het midden: vier open uiteinden, één per kleur —
+   **hier begint de ketting**. (Optionele chaos-variant: stop een paar extra Video-begin-kaarten in
+   het deck; speel je er één, dan start je een gloednieuwe losse strook = meer open uiteinden om te lozen.)
 2. Schud de rest tot een gedekte stapel. Iedere speler trekt **5 kaarten**.
 3. Jongste begint; met de klok mee.
 
@@ -90,8 +98,9 @@ In een race-naar-leeg is interactie het gevecht om **open uiteinden in jouw kleu
   heeft. Elke ingreep is tweesnijdend.
 
 ## Startgetallen (afstembaar)
-Deck ±96 (54 scène incl. ~16 kleurwissel / 10 vertakking / 8 samenkomst / 12 kop / 4 pilon / 8 actie) ·
-hand **5** · winst = lege hand.
+Deck ±96 (54 scène incl. ~16 kleurwissel / 10 vertakking / 8 samenkomst / 12 aftiteling-koppen /
+4 pilon / 8 actie) + **1 Video-begin-kaart** (of een paar, voor de chaos-variant) · hand **5** ·
+winst = lege hand.
 
 ## Echte quotes (belangrijk)
 De regels op de conceptkaarten zijn **origineel in KUD-stijl** geschreven als **placeholder** — geen
