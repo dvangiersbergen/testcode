@@ -1,0 +1,61 @@
+id,scene,tekst,rood,blanco,art,bron,notitie
+PAN-001,"Die Groene kijkt recht in de camera, neutraal",,,,,"KUD personage","Goede opener"
+PAN-002,"Die Roze haalt diep adem om iets te zeggen","'Ik moet je iets vertellen.'",,,,"KUD personage","Setup"
+PAN-003,"Twee personages staan ongemakkelijk naast elkaar",,,,,"KUD","Visueel, geen tekst"
+PAN-004,"Die Groene wijst ergens naar buiten beeld","'Kijk dan!'",,,,"KUD",
+PAN-005,"Zwoele Man verschijnt en kijkt zwoel in de camera",,,,,"Zwoele man","Iconisch"
+PAN-006,"Een konijntje zit schattig in beeld",,,,,"Konijntje",
+PAN-007,"Die Roze met grote, betraande ogen",,,,,"KUD","Reactie"
+PAN-008,"Werner de walvis dobbert rustig in het water",,,,,"Werner de walvis",
+PAN-009,"Personage staart in de verte, peinzend","'Het zit zo…'",,,,"KUD","Setup"
+PAN-010,"Een pilon staat eenzaam midden in beeld",,,,,"pilon","Running gag"
+PAN-011,"Die Groene en Die Roze zitten op een bank",,,,,"KUD","Setup-duo"
+PAN-012,"Personage opent een deur en kijkt naar binnen","'Hallo?'",,,,"KUD",
+PAN-013,"Wiebe houdt iets verdachts achter zijn rug",,,,,"Wiebe",
+PAN-014,"Cleeuwn (de clown) staat er ongemakkelijk bij",,,,,"Cleeuwn",
+PAN-015,"Personage steekt enthousiast een vinger op","'Ik heb een idee!'",,,,"KUD","Setup"
+PAN-016,"Twee personages staren elkaar aan, stilte",,,,,"KUD","Visueel"
+PAN-017,"Die Roze typt driftig op haar telefoon",,,,,"KUD",
+PAN-018,"Personage gluurt om een hoekje",,,,,"KUD",
+PAN-019,"Een albatros vliegt majestueus voorbij",,,,,"Albatros",
+PAN-020,"Personage giet koffie in, doodleuk","'Even normaal doen.'",,,,"KUD",
+PAN-021,"Die Groene knikt langzaam en veelbetekenend",,,,,"KUD","Reactie"
+PAN-022,"Personage staat in de regen, doorweekt",,,,,"KUD",
+PAN-023,"Een vliegende koe zweeft door de lucht",,,,,"De vliegende koe",
+PAN-024,"Personage kijkt geschokt opzij","'Wat heb je gedaan?'",,,,"KUD","Reactie"
+PAN-025,"De Ridder staat klaar met een (gebroken) zwaard",,,,,"De Ridder",
+PAN-026,"Personage haalt onverschillig zijn schouders op",,,,,"KUD","Reactie"
+PAN-027,"Twee personages high-fiven ongemakkelijk traag",,,,,"KUD",
+PAN-028,"Een papegaai zit op een schouder en kijkt scheef",,,,,"Papegaai",
+PAN-029,"Personage tuurt argwanend naar een pakketje",,,,,"KUD",
+PAN-030,"Die Roze lacht net iets te hard","'Haha! …ha.'",,,,"KUD",
+PAN-031,"Personage staat op een trampoline, stil",,,,,"Trampoline",
+PAN-032,"Iemand plast nonchalant in een putje",,,,,"Putjesplasser","Schurende humor"
+PAN-033,"Personage houdt een nietmachine omhoog als trofee",,,,,"Nietmachine",
+PAN-034,"Een luchtballon drijft op de achtergrond",,,,,"Luchtballon",
+PAN-035,"Personage kijkt vol verwachting de camera in","'Nou?'",,,,"KUD","Setup/reactie"
+PAN-036,"Die Groene zit er volledig kapot bij",,,,,"KUD",
+PAN-037,"Personage trekt een wenkbrauw op","'Boeiend.'",,,,"KUD",
+PAN-038,"Iemand staat half verscholen achter een gordijn",,,,,"KUD",
+PAN-039,"Personage roept iets naar boven","'Mam?!'",,,,"KUD",
+PAN-040,"Twee personages rennen in paniek weg",,,,,"KUD",
+PAN-041,"Personage staart naar zijn lege handen",,,,,"KUD",
+PAN-042,"Die Roze wijst beschuldigend naar voren","'Jij dus.'",,,,"KUD","Reactie"
+RED-001,"Zwoele Man duikt plots op en knipoogt","'…hallo.'",1,,,"Zwoele man","Sterke slotgrap"
+RED-002,"Alles ontploft op de achtergrond, personage onbewogen",,1,,,"KUD","Visuele knaller"
+RED-003,"Een konijntje verschijnt en verandert alles","'Konijntje.'",1,,,"Konijntje",
+RED-004,"Werner de walvis valt onverwacht uit de lucht",,1,,,"Werner de walvis",
+RED-005,"Pilon valt theatraal om",,1,,,"pilon",
+RED-006,"Personage staart leeg de camera in, vernietigd","'…oké dan.'",1,,,"KUD",
+RED-007,"Die Groene plast doodleuk in het putje, einde verhaal",,1,,,"Putjesplasser",
+RED-008,"Cleeuwn lacht maniakaal in beeld",,1,,,"Cleeuwn",
+RED-009,"Alle personages kijken geschokt dezelfde kant op",,1,,,"KUD",
+RED-010,"Een vliegende koe ramt het beeld binnen",,1,,,"De vliegende koe",
+RED-011,"Personage trekt langzaam een gordijn dicht",,1,,,"KUD",
+RED-012,"Die Roze fluistert iets en lacht","'…laat maar.'",1,,,"KUD",
+RED-013,"Bordje 'EINDE' valt in beeld terwijl chaos losbarst",,1,,,"KUD",
+BLK-001,"",,,1,,"","DIY paneel"
+BLK-002,"",,,1,,"","DIY paneel"
+BLK-003,"",,1,1,,"","DIY rood slotpaneel"
+BLK-004,"",,,1,,"","DIY paneel"
+BLK-005,"",,,1,,"","DIY paneel"
