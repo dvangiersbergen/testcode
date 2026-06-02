@@ -54,3 +54,50 @@ Geen punten: wie als **eerste zijn hand leeg** heeft, wint. Sneller, meaner, iet
 ## Startgetallen (afstembaar)
 Deck ±96 (52 splice / 10 vertakking / 8 merge / 12 einde / 4 pilon / 10 actie) · hand 7 ·
 trekstraf 2 · finale-bonus 5.
+
+---
+
+# v0.4 — Twee nieuwe lagen
+
+## A) Fysiek concept: "Koord & Klik" (de magneetjes)
+De vier verhaaldraden worden **letterlijk fysiek**. Elke kaartrand heeft op de poort-plek een klein
+**magneetje**; tussen twee passende poorten klik je een **gekleurd koordje** (groen/roze/blauw/geel)
+dat met een bevredigende *klik* vastzit. Daarmee:
+
+- **Open poort = los magneetje** → je ziet in één oogopslag waar de aflevering nog verder kan
+  (lost het "waar mag ik leggen?"-zoeken op).
+- **Vertakking** = twee koordjes uit één kaart; **Samenkomst** = twee koordjes komen samen in één.
+- **EINDE** = een magnetisch **eind-dopje** dat de poort afsluit (tactiel "klik, en dicht").
+- **KNIP** = een koordje fysiek **losklikken** — meteen het meest bevredigende moment van het spel.
+
+Productie: dit is de **deluxe/premium-editie** (magneten + koorden kosten geld). De **print-and-play**
+valt terug op gekleurde randen zonder koorden; mechanisch identiek.
+
+## B) De Stem-/Quote-laag (meer KUD + meer diepgang)
+Elke kaart krijgt onderaan de art een **quote-ondertitel** (een one-liner van het personage). Die
+doet drie dingen — van puur entertainment tot echte tactiek:
+
+1. **Voorlezen (entertainment).** Leg je een kaart, dan lees je de regel **hardop in het personage**.
+   De aflevering "praat" terwijl hij groeit — pure KUD-party-energie. (Geen punten; altijd aan.)
+
+2. **OPZET → PUNCHLINE (de grap landt — diepgang).** Quotes zijn getagd als **OPZET** (blauw) of
+   **PUNCHLINE** (roze). Sluit je een lijn af met een EINDE-**punchline** terwijl de scène ervoor een
+   **OPZET** is, dan *landt de grap*: **+3 kijkcijfers** bonus. Je gaat dus quotes lezen en je strip
+   bewust opbouwen naar een goede afsluiter.
+
+3. **Running-gags ↺ (combo — diepgang).** Sommige scènes dragen een **gag-tag** (Konijntje, Pilon,
+   Zwoele Man, …). Cap je een lijn met **≥2** kaarten van dezelfde gag erin → kijkcijfers **×1,5**;
+   met **≥3** → **×2**. Een thematisch coherente aflevering (alle konijntjes bij elkaar) scoort dus
+   fors meer dan willekeurig dumpen.
+
+**Waarom dit ook de beta-kritiek adresseert:** de testers vonden dat *snel dumpen* het *scoren*
+verslaat (de vlakke finale-bonus domineert). De Stem-laag verschuift waarde terug naar het
+**bouwen en slim afsluiten** van verhaallijnen — samen met de voorgestelde P0-fix (finale-bonus =
+lengte van je langste gesloten lijn i.p.v. vaste +5) wordt scoren weer de hoofdmoot.
+
+### Echte quotes (belangrijk)
+De regels op de conceptkaarten zijn **origineel in KUD-stijl** geschreven als **placeholder** — het
+zijn **geen** letterlijke serie-citaten (auteursrecht). Elke kaart heeft een quote-**slot**; de
+bedoeling is dat de echte KUD-regels daar later in komen, gehaald uit de afleveringen door een fan
+en idealiter met **toestemming van Peter Lub**. Het spel is zo ontworpen dat je dat slot 1-op-1 kunt
+invullen zonder iets aan de mechaniek te veranderen.
