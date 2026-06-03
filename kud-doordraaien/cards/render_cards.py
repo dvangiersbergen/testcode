@@ -56,14 +56,14 @@ def fmt(n):
     while len(s)>3: out="."+s[-3:]+out; s=s[:-3]
     return s+out
 
-def shadow_card():
+def shadow_card(bg=(255,255,255,255),border=None):
     pad=40
     base=Image.new("RGBA",(W+2*pad,H+2*pad),(0,0,0,0))
     sh=Image.new("RGBA",base.size,(0,0,0,0)); ds=ImageDraw.Draw(sh)
     ds.rounded_rectangle([pad+10,pad+16,pad+W+10,pad+H+16],radius=30,fill=(0,0,0,90))
     base.alpha_composite(sh.filter(ImageFilter.GaussianBlur(15)))
-    card=Image.new("RGBA",(W,H),(255,255,255,255)); d=ImageDraw.Draw(card)
-    rrect(d,[2,2,W-3,H-3],26,outline=LINE+(255,),width=3)
+    card=Image.new("RGBA",(W,H),bg); d=ImageDraw.Draw(card)
+    rrect(d,[2,2,W-3,H-3],26,outline=(border or (LINE+(255,))),width=3)
     base.alpha_composite(card,(pad,pad)); return base,pad
 
 def yt_logo(d,x,y):
@@ -212,13 +212,13 @@ CARDS=[
  dict(id="05_vertakking",type_label="Vertakking",glyph="Y",accent="Y",vid="5w_lEzZNx_E",
       title="Kud - Verrassing!",left=["Y"],right=["Y","Y"],qtag="setup",gag="Konijntje",
       quote="Niemand verwacht het tweede konijntje.",rule="De strip splitst: +1 open uiteinde."),
- dict(id="06_samenkomst",type_label="Samenkomst",glyph="⋎",accent="G",vid="iGBzhqSgJUk",
+ dict(id="06_samenkomst",type_label="Samenkomst",glyph="Λ",accent="G",vid="iGBzhqSgJUk",
       title="Kud - Mijnwerkers",left=["G","G"],right=["G"],
       quote="Dieper graven loste nog nooit iets op.",rule="Voegt twee draden samen: −1 open uiteinde."),
- dict(id="07_einde_roze",type_label="Aftiteling · KOP",glyph="⏹",accent="R",vid="boLkKd3W2sc",
+ dict(id="07_einde_roze",type_label="Aftiteling · KOP",glyph="■",accent="R",vid="boLkKd3W2sc",
       title="Kud - Drama",left=["R"],right=["CAP"],qtag="punch",
       quote="En scène. Niemand klapte.",rule="Einde-filmpje: sluit een roze uiteinde af."),
- dict(id="08_einde_blauw",type_label="Aftiteling · KOP",glyph="⏹",accent="B",vid="tMGYPMJJm3o",
+ dict(id="08_einde_blauw",type_label="Aftiteling · KOP",glyph="■",accent="B",vid="tMGYPMJJm3o",
       title="Kud - Comazuipen",left=["B"],right=["CAP"],qtag="punch",
       quote="Morgen weten we nergens meer van.",rule="Einde-filmpje: cap een blauw uiteinde."),
  dict(id="09_pilon_wild",type_label="Pilon · wild",glyph="★",accent="*",vid="IpELRbaCzq8",
@@ -240,6 +240,82 @@ ACTIONS=[
  dict(id="14_archief",type_label="Actie · ARCHIEF",glyph="⌕",accent="G",vid="ye_FqUM9sNI",
       title="Kud - Rommelmarkten",quote="Alles wat je zoekt ligt al in een doos.",
       rule="Trek 1 en gooi 1 weg."),
+]
+
+# ---- TUSSENKAARTEN (overgangen tussen fragmenten) ---------------------------
+DARK=(20,23,29); DARK2=(30,34,42)
+def draw_socket(card,side,cy,color):
+    d=ImageDraw.Draw(card,"RGBA"); pw,ph=44,66
+    box=[0,cy-ph//2,pw,cy+ph//2] if side=="L" else [W-pw,cy-ph//2,W,cy+ph//2]
+    mx=pw-15 if side=="L" else W-pw+15
+    if color=="CAP":
+        rrect(d,box,12,fill=(124,128,136,255)); d.text((mx-9,cy-15),"■",font=font(26),fill=(245,245,247,255)); return mx
+    _,col=THREADS[color]; rrect(d,box,12,fill=col+(255,))
+    d.ellipse([mx-12,cy-12,mx+12,cy+12],fill=(239,239,241,255),outline=(108,112,120,255),width=3)
+    d.ellipse([mx-4,cy-4,mx+4,cy+4],fill=(92,96,104,255)); return mx
+
+def make_tussen(spec):
+    base,pad=shadow_card(bg=DARK+(255,),border=(60,64,74,255))
+    card=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(card,"RGBA")
+    accent=THREADS[spec.get("accent","*")][1]
+    # header
+    d.text((104,52),"▶▶  OVERGANG",font=font(30),fill=(150,154,164,255))
+    d.text((104,92),"tussenkaart",font=font(20,False),fill=(110,114,124,255))
+    t=spec["type_label"].upper(); f=font(24); wt=tw(d,t,f)
+    gx=W-104-62; d.ellipse([gx,48,gx+62,110],fill=accent+(255,))
+    g=font(34); d.text((gx+31-tw(d,spec["glyph"],g)//2,62),spec["glyph"],font=g,fill=(15,17,22,255))
+    x1=gx-14; rrect(d,[x1-(wt+28),56,x1,102],10,fill=(238,238,240,255)); d.text((x1-wt-14,64),t,font=f,fill=(20,22,28,255))
+    # overgangstekst (de ster van de kaart)
+    txt=spec["text"]; f=font(40); maxw=W-300; words=txt.split(); line=""; lines=[]
+    for w in words:
+        if tw(d,(line+" "+w).strip(),f)<=maxw: line=(line+" "+w).strip()
+        else: lines.append(line); line=w
+    lines.append(line)
+    ty=240-(len(lines)-1)*28
+    for ln in lines:
+        d.text(((W-tw(d,ln,f))//2,ty),ln,font=f,fill=(245,246,248,255)); ty+=58
+    # buffer-dots (oude-YT "laadt…"-knipoog)
+    for i in range(3):
+        c=240 if i==1 else 150
+        d.ellipse([W//2-34+i*30,ty+8,W//2-18+i*30,ty+24],fill=(c,c,c+8,255))
+    # cord-routing: links -> hub -> rechts
+    lefts=spec["left"]; rights=spec["right"]; hub=(W//2,560)
+    def ys(n,center):
+        return [center] if n==1 else [center-90+ i*(180//(n-1)) for i in range(n)]
+    lys=ys(len(lefts),560); rys=ys(len(rights),560)
+    for c,y in zip(lefts,lys):
+        mx=draw_socket(card,"L",y,c); _,col=THREADS[c]
+        d.line([(mx,y),hub],fill=col+(255,),width=12)
+    for c,y in zip(rights,rys):
+        if c=="CAP":
+            draw_socket(card,"R",y,"CAP"); d.line([hub,(W-44,y)],fill=(120,124,132,255),width=12)
+        else:
+            mx=draw_socket(card,"R",y,c); _,col=THREADS[c]; d.line([hub,(mx,y)],fill=col+(255,),width=12)
+    d.ellipse([hub[0]-26,hub[1]-26,hub[0]+26,hub[1]+26],fill=accent+(255,))
+    d.text((hub[0]-tw(d,spec["glyph"],font(34))//2,hub[1]-22),spec["glyph"],font=font(34),fill=(15,17,22,255))
+    # voet
+    d.text((104,H-78),spec.get("rule",""),font=font(21,False),fill=(150,154,164,255))
+    base.alpha_composite(card,(pad,pad))
+    out=Image.new("RGB",base.size,(247,247,245)); out.paste(base,(0,0),base)
+    p=PNG/f'{spec["id"]}.png'; out.save(p); return p
+
+TUSSEN=[
+ dict(id="T1_tussendoor_G",type_label="Tussendoor",glyph="→",accent="G",left=["G"],right=["G"],
+      text="Ondertussen, een paar tellen later…",rule="Verbindt twee fragmenten. Meerdere mogen achter elkaar."),
+ dict(id="T2_tussendoor_R",type_label="Tussendoor",glyph="→",accent="R",left=["R"],right=["R"],
+      text="Wat niemand doorhad:",rule="Verbindt twee fragmenten in dezelfde kleur."),
+ dict(id="T3_omslag_BY",type_label="Omslag · kleurwissel",glyph="↘",accent="Y",left=["B"],right=["Y"],
+      text="En toen sloeg de sfeer compleet om.",rule="De draad wisselt van kleur: blauw → geel."),
+ dict(id="T4_splitsing_Y",type_label="Splitsing",glyph="Y",accent="Y",left=["Y"],right=["Y","Y"],
+      text="Twee dingen tegelijk:",rule="De aflevering splitst: +1 open uiteinde."),
+ dict(id="T5_samenkomst_G",type_label="Samenkomst",glyph="Λ",accent="G",left=["G","G"],right=["G"],
+      text="Alles kwam samen bij…",rule="Twee draden komen samen: −1 open uiteinde. Bouw direct door."),
+ dict(id="T6_aftiteling_R",type_label="Aftiteling",glyph="■",accent="R",left=["R"],right=["CAP"],
+      text="En toen was het gewoon klaar.",rule="Einde-filmpje: sluit de draad af."),
+ dict(id="T7_pilon_wild",type_label="Pilon · wild",glyph="★",accent="*",left=["*"],right=["*"],
+      text="Er stond, zoals altijd, een pilon in beeld.",rule="Past op elke kleur."),
+ dict(id="T8_tussendoor_B",type_label="Tussendoor",glyph="→",accent="B",left=["B"],right=["B"],
+      text="Drie afleveringen later…",rule="Verbindt twee fragmenten in dezelfde kleur."),
 ]
 
 def make_leader():
@@ -273,26 +349,51 @@ def make_anatomy():
         d.text((x+40,ty),line,font=f,fill=(40,44,52))
     out=PNG/"anatomie.png"; cv.save(out); return out
 
-def contact_sheet(paths):
+def contact_sheet(paths,name="overzicht.png"):
     cols=4; tw_,th_=560,400; gap=18; rows=(len(paths)+cols-1)//cols
     sheet=Image.new("RGB",(cols*tw_+(cols+1)*gap,rows*th_+(rows+1)*gap),(236,236,232))
     for i,p in enumerate(paths):
         im=Image.open(p).convert("RGB"); im.thumbnail((tw_,th_)); r,c=divmod(i,cols)
         sheet.paste(im,(gap+c*(tw_+gap)+(tw_-im.width)//2,gap+r*(th_+gap)+(th_-im.height)//2))
-    out=HERE/"overzicht.png"; sheet.save(out); return out
+    out=HERE/name; sheet.save(out); return out
+
+def make_chain_demo():
+    """fragment -> tussenkaart -> fragment, gekoppeld met groene koorden."""
+    seq=[PNG/"01_splice_groen.png",PNG/"T1_tussendoor_G.png",PNG/"06_samenkomst.png"]
+    cw=560; gap=70; Wd=60+3*cw+2*gap+60
+    cv=Image.new("RGB",(Wd,560),(247,247,245)); d=ImageDraw.Draw(cv)
+    d.rounded_rectangle([40,24,Wd-40,98],radius=16,fill=(47,125,50))
+    d.text((64,40),"FRAGMENT  →  TUSSENKAART  →  FRAGMENT",font=font(34),fill="white")
+    y0=150; col=THREADS["G"][1]
+    for i,p in enumerate(seq):
+        im=Image.open(p).convert("RGB"); im.thumbnail((cw,420))
+        x=60+i*(cw+gap); cv.paste(im,(x,y0))
+        if i<2:
+            cx=x+im.width+gap//2; cyy=y0+im.height//2
+            d.line([(x+im.width-6,cyy),(x+im.width+gap+6,cyy)],fill=col,width=12)
+            d.ellipse([cx-15,cyy-15,cx+15,cyy+15],fill=col,outline=(255,255,255),width=4)
+    d.text((64,y0+430),"De tussenkaart vertelt wat er tússen twee fragmenten gebeurt — en je mag er meerdere achter elkaar leggen.",
+           font=font(24,False),fill=(70,70,72))
+    out=HERE/"ketting_voorbeeld.png"; cv.save(out); return out
 
 def main():
-    paths=[make_leader()]+[make(s) for s in CARDS+ACTIONS]
-    anat=make_anatomy(); sheet=contact_sheet(paths)
+    frag=[make_leader()]+[make(s) for s in CARDS+ACTIONS]
+    tussen=[make_tussen(s) for s in TUSSEN]
+    anat=make_anatomy()
+    sheet=contact_sheet(frag,"overzicht.png")
+    tsheet=contact_sheet(tussen,"tussenkaarten_overzicht.png")
+    demo=make_chain_demo()
+    allp=frag+tussen
     pages=[Image.open(anat).convert("RGB")]
-    for i in range(0,len(paths),4):
-        grp=[Image.open(p).convert("RGB") for p in paths[i:i+4]]
+    for i in range(0,len(allp),4):
+        grp=[Image.open(p).convert("RGB") for p in allp[i:i+4]]
         pg=Image.new("RGB",(1240,1754),(250,250,248))
         for j,im in enumerate(grp):
             im2=im.copy(); im2.thumbnail((1100,820)); pg.paste(im2,((1240-im2.width)//2,40+j*430))
         pages.append(pg)
     pdf=HERE/"KUD-Doordraaien-concept.pdf"
     pages[0].save(pdf,save_all=True,append_images=pages[1:],resolution=150.0)
-    print(f"{len(paths)} kaarten · contactvel {sheet.name} · PDF {pdf.name} ({len(pages)} pag.)")
+    print(f"{len(frag)} fragment-kaarten + {len(tussen)} tussenkaarten · "
+          f"{sheet.name} · {tsheet.name} · {demo.name} · PDF {pdf.name} ({len(pages)} pag.)")
 
 if __name__=="__main__": main()

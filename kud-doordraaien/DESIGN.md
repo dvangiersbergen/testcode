@@ -12,6 +12,34 @@ sneller je hand te lozen).
 Klik scènes kleur-op-kleur aan de open uiteinden van een steeds grotere KUD-strip; lozer zoveel
 mogelijk kaarten per beurt, saboteer je tegenstander, en wees als eerste leeg.
 
+## v0.9 — Gestroomlijnd: twee kaartfamilies (+ acties)
+Het deck heeft nu een helder ritme van twee families:
+
+1. **Fragmenten (video's)** — de grappige KUD-scènes (de YouTube-skin, met reactie-quote). Eén
+   kleur, sluit met een koord aan. Dit is de **inhoud / de lol**. (~50% van het deck.)
+2. **Tussenkaarten (overgangen)** — zitten op het koord **tússen** twee fragmenten en dragen een
+   regel "wat ertussen gebeurt" (donkere overgangsstijl). Hier zit álle **topologie**:
+   - **Tussendoor** (→, zelfde kleur) — "Ondertussen…"
+   - **Omslag** (↘, kleurwissel)
+   - **Splitsing** (Y, 1→2) — opent een uiteinde
+   - **Samenkomst** (Λ, 2→1) — sluit een uiteinde
+   - **Aftiteling** (■, 1→0, meerdere) — het einde-filmpje
+   - **Pilon** (★, wild)
+   Je mag **meerdere tussenkaarten achter elkaar** leggen tussen twee fragmenten (een langere,
+   sillier overgang). (~40%.)
+3. **Acties** (Knip, Cliffhanger, …) — los van de lijn. (~10%.)
+
+**Ketting-ritme:** `FRAGMENT — tussenkaart(en) — FRAGMENT — …`. Twee fragmenten mogen ook direct
+gekoppeld worden (een harde cut) als de kleuren matchen.
+
+**Waarom dit stroomlijnt én "coherent maar toch niet" oplost:** alle structuurkaarten
+(splitsing/samenkomst/kleurwissel/aftiteling) zijn nu **één herkenbare familie** met dezelfde stijl
+— minder types om te leren, rustiger bord. En de overgangstekst is precies het narratieve skelet
+("ondertussen… en toen… alles kwam samen… einde") dat de **absurde, onsamenhangende fragmenten**
+aan elkaar rijgt: **structuur in de overgang, chaos in de inhoud.**
+
+> Dit vervangt de losse kaarttypen-tabel hieronder en het v0.8-roster; die blijven als achtergrond.
+
 ## Verhaaldraden (de kleuren / de koorden)
 Vier draden: 🟩 Groen · 🟥 Roze · 🟦 Blauw · 🟨 Geel. Scènes leggen **kleur-op-kleur** aan een **open
 uiteinde** van dezelfde kleur.
