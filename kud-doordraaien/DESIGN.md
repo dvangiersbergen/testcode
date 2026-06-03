@@ -17,8 +17,12 @@ Het deck heeft nu een helder ritme van twee families:
 
 1. **Fragmenten (video's)** — de grappige KUD-scènes (de YouTube-skin, met reactie-quote). Eén
    kleur, sluit met een koord aan. Dit is de **inhoud / de lol**. (~50% van het deck.)
-2. **Tussenkaarten (overgangen)** — zitten op het koord **tússen** twee fragmenten en dragen een
-   regel "wat ertussen gebeurt" (donkere overgangsstijl). Hier zit álle **topologie**:
+2. **Tussenkaarten (KUD-gebeurtenissen)** — zitten op het koord **tússen** twee fragmenten en dragen
+   een absurde **KUD-gebeurtenis**: iets dat er tussen gebeurt ("Plots stak de Zwoele Man zijn hoofd
+   om de hoek", "Er rolde zonder uitleg een pilon door beeld"). Dít is de comedy-laag in de geest van
+   *Horrible Therapist / Cards Against Humanity*: lees je de ketting voor, dan bouw je samen een
+   geschifte **custom KUD-aflevering** terwijl je je kaarten loost. Op elke gebeurtenis zit ook de
+   **topologie**:
    - **Tussendoor** (→, zelfde kleur) — "Ondertussen…"
    - **Omslag** (↘, kleurwissel)
    - **Splitsing** (Y, 1→2) — opent een uiteinde

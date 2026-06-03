@@ -259,8 +259,8 @@ def make_tussen(spec):
     card=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(card,"RGBA")
     accent=THREADS[spec.get("accent","*")][1]
     # header
-    d.text((104,52),"▶▶  OVERGANG",font=font(30),fill=(150,154,164,255))
-    d.text((104,92),"tussenkaart",font=font(20,False),fill=(110,114,124,255))
+    d.text((104,52),"▶▶  KUD-GEBEURTENIS",font=font(30),fill=(150,154,164,255))
+    d.text((104,92),"wat er tussen de fragmenten gebeurt",font=font(20,False),fill=(110,114,124,255))
     t=spec["type_label"].upper(); f=font(24); wt=tw(d,t,f)
     gx=W-104-62; d.ellipse([gx,48,gx+62,110],fill=accent+(255,))
     g=font(34); d.text((gx+31-tw(d,spec["glyph"],g)//2,62),spec["glyph"],font=g,fill=(15,17,22,255))
@@ -300,22 +300,32 @@ def make_tussen(spec):
     p=PNG/f'{spec["id"]}.png'; out.save(p); return p
 
 TUSSEN=[
- dict(id="T1_tussendoor_G",type_label="Tussendoor",glyph="→",accent="G",left=["G"],right=["G"],
-      text="Ondertussen, een paar tellen later…",rule="Verbindt twee fragmenten. Meerdere mogen achter elkaar."),
- dict(id="T2_tussendoor_R",type_label="Tussendoor",glyph="→",accent="R",left=["R"],right=["R"],
-      text="Wat niemand doorhad:",rule="Verbindt twee fragmenten in dezelfde kleur."),
- dict(id="T3_omslag_BY",type_label="Omslag · kleurwissel",glyph="↘",accent="Y",left=["B"],right=["Y"],
-      text="En toen sloeg de sfeer compleet om.",rule="De draad wisselt van kleur: blauw → geel."),
- dict(id="T4_splitsing_Y",type_label="Splitsing",glyph="Y",accent="Y",left=["Y"],right=["Y","Y"],
-      text="Twee dingen tegelijk:",rule="De aflevering splitst: +1 open uiteinde."),
- dict(id="T5_samenkomst_G",type_label="Samenkomst",glyph="Λ",accent="G",left=["G","G"],right=["G"],
-      text="Alles kwam samen bij…",rule="Twee draden komen samen: −1 open uiteinde. Bouw direct door."),
- dict(id="T6_aftiteling_R",type_label="Aftiteling",glyph="■",accent="R",left=["R"],right=["CAP"],
-      text="En toen was het gewoon klaar.",rule="Einde-filmpje: sluit de draad af."),
- dict(id="T7_pilon_wild",type_label="Pilon · wild",glyph="★",accent="*",left=["*"],right=["*"],
-      text="Er stond, zoals altijd, een pilon in beeld.",rule="Past op elke kleur."),
- dict(id="T8_tussendoor_B",type_label="Tussendoor",glyph="→",accent="B",left=["B"],right=["B"],
-      text="Drie afleveringen later…",rule="Verbindt twee fragmenten in dezelfde kleur."),
+ dict(id="T01_tussendoor_G",type_label="Tussendoor",glyph="→",accent="G",left=["G"],right=["G"],
+      text="Plots stak de Zwoele Man zijn hoofd om de hoek.",rule="Gebeurtenis. Verbindt twee fragmenten; meerdere mogen achter elkaar."),
+ dict(id="T02_tussendoor_R",type_label="Tussendoor",glyph="→",accent="R",left=["R"],right=["R"],
+      text="Er rolde, zonder enige uitleg, een pilon door beeld.",rule="Gebeurtenis. Verbindt twee fragmenten in dezelfde kleur."),
+ dict(id="T03_tussendoor_B",type_label="Tussendoor",glyph="→",accent="B",left=["B"],right=["B"],
+      text="De achtergrondmuziek ging per ongeluk keihard aan.",rule="Gebeurtenis. Verbindt twee fragmenten."),
+ dict(id="T04_tussendoor_Y",type_label="Tussendoor",glyph="→",accent="Y",left=["Y"],right=["Y"],
+      text="Iedereen veranderde drie tellen lang in een konijntje.",rule="Gebeurtenis. Verbindt twee fragmenten."),
+ dict(id="T05_tussendoor_G",type_label="Tussendoor",glyph="→",accent="G",left=["G"],right=["G"],
+      text="Werner de walvis viel uit de lucht. Alweer.",rule="Gebeurtenis. Verbindt twee fragmenten."),
+ dict(id="T06_omslag_BY",type_label="Omslag · kleurwissel",glyph="↘",accent="Y",left=["B"],right=["Y"],
+      text="De sfeer sloeg compleet om toen iemand 'gola' riep.",rule="Gebeurtenis + kleurwissel: blauw → geel."),
+ dict(id="T07_omslag_GR",type_label="Omslag · kleurwissel",glyph="↘",accent="R",left=["G"],right=["R"],
+      text="Het werd nacht. En toen weer dag. Niemand zei iets.",rule="Gebeurtenis + kleurwissel: groen → roze."),
+ dict(id="T08_splitsing_Y",type_label="Splitsing",glyph="Y",accent="Y",left=["Y"],right=["Y","Y"],
+      text="Het verhaal spleet zich in tweeën. Letterlijk.",rule="Gebeurtenis die splitst: +1 open uiteinde."),
+ dict(id="T09_splitsing_G",type_label="Splitsing",glyph="Y",accent="G",left=["G"],right=["G","G"],
+      text="Twee dingen tegelijk, want de regie was de draad kwijt.",rule="Gebeurtenis die splitst: +1 open uiteinde."),
+ dict(id="T10_samenkomst_G",type_label="Samenkomst",glyph="Λ",accent="G",left=["G","G"],right=["G"],
+      text="Alles kwam samen in één ongemakkelijke groepsknuffel.",rule="Gebeurtenis die samenkomt: −1 uiteinde. Bouw direct door."),
+ dict(id="T11_aftiteling_R",type_label="Aftiteling",glyph="■",accent="R",left=["R"],right=["CAP"],
+      text="En toen, volkomen abrupt, was het gewoon klaar.",rule="Einde-filmpje: sluit de draad af."),
+ dict(id="T12_aftiteling_B",type_label="Aftiteling",glyph="■",accent="B",left=["B"],right=["CAP"],
+      text="De camera viel om en bleef liggen. Aftiteling.",rule="Einde-filmpje: sluit de draad af."),
+ dict(id="T13_pilon_wild",type_label="Pilon · wild",glyph="★",accent="*",left=["*"],right=["*"],
+      text="De pilon kreeg, tegen alle verwachting in, een spreekrol.",rule="Gebeurtenis. Past op elke kleur."),
 ]
 
 def make_leader():
@@ -359,7 +369,7 @@ def contact_sheet(paths,name="overzicht.png"):
 
 def make_chain_demo():
     """fragment -> tussenkaart -> fragment, gekoppeld met groene koorden."""
-    seq=[PNG/"01_splice_groen.png",PNG/"T1_tussendoor_G.png",PNG/"06_samenkomst.png"]
+    seq=[PNG/"01_splice_groen.png",PNG/"T05_tussendoor_G.png",PNG/"06_samenkomst.png"]
     cw=560; gap=70; Wd=60+3*cw+2*gap+60
     cv=Image.new("RGB",(Wd,560),(247,247,245)); d=ImageDraw.Draw(cv)
     d.rounded_rectangle([40,24,Wd-40,98],radius=16,fill=(47,125,50))
