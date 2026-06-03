@@ -47,7 +47,7 @@ if MANIFEST.exists():
     for r in csv.DictReader(MANIFEST.open(encoding="utf-8")): titles[r["videoId"]]=r["title"]
 
 W,H=1120,760
-VB=(60,126,W-60,464)        # videospeler
+VB=(104,128,W-104,466)        # videospeler — met zijmarges (gutters) voor de connectors
 
 def rng_for(cid): return random.Random(int(hashlib.md5(cid.encode()).hexdigest(),16))
 def rrect(d,b,r,**k): d.rounded_rectangle(b,radius=r,**k)
@@ -74,7 +74,7 @@ def yt_logo(d,x,y):
     return bx+wt+26
 
 def type_badge(d,type_label,glyph,accent):
-    gx=W-60-62; d.ellipse([gx,48,gx+62,110],fill=accent+(255,))
+    gx=W-104-62; d.ellipse([gx,48,gx+62,110],fill=accent+(255,))
     g=font(36); d.text((gx+31-tw(d,glyph,g)//2,62),glyph,font=g,fill=(20,22,28,255))
     t=type_label.upper(); f=font(24); wt=tw(d,t,f)
     x1=gx-14; x0=x1-(wt+28)
@@ -126,48 +126,48 @@ def chip(d,x,y,label,col,txtcol=(255,255,255)):
     return x+w+22
 
 def comment_block(card,spec):
-    d=ImageDraw.Draw(card,"RGBA"); r=rng_for(spec["id"])
+    d=ImageDraw.Draw(card,"RGBA"); r=rng_for(spec["id"]); L=104
     quote=spec.get("quote",""); pinned=spec.get("pinned")
     # videotitel + stats
     title=spec.get("title",""); f=font(33); t=title if len(title)<=40 else title[:39]+"…"
-    d.text((64,474),t,font=f,fill=INK+(255,))
+    d.text((L,476),t,font=f,fill=INK+(255,))
     views=r.randint(8000,3500000); yrs=r.randint(7,14)
-    d.text((64,520),f"KUD ✓ · {fmt(views)} weergaven · {yrs} jaar geleden",font=font(21,False),fill=GREY+(255,))
+    d.text((L,522),f"KUD ✓ · {fmt(views)} weergaven · {yrs} jaar geleden",font=font(21,False),fill=GREY+(255,))
     rule=spec.get("rule","")
-    cy=560
+    cy=562
     if rule:
         f=font(20,False); rt=rule
-        while tw(d,rt,f)>W-130 and len(rt)>8: rt=rt[:-2]
+        while tw(d,rt,f)>W-2*L and len(rt)>8: rt=rt[:-2]
         if rt!=rule: rt=rt.rstrip()+"…"
-        d.text((64,556),rt,font=f,fill=(120,120,120,255)); cy=590
-    d.line([(64,cy),(W-64,cy)],fill=LINE+(255,),width=2); cy+=14
-    # de reactie
+        d.text((L,558),rt,font=f,fill=(120,120,120,255)); cy=592
+    d.line([(L,cy),(W-L,cy)],fill=LINE+(255,),width=2); cy+=14
+    ax=L; nx=L+92
     if pinned:
-        d.text((150,cy-2),"▦ Vastgezet door KUD",font=font(17,False),fill=GREY+(255,)); cy+=22
+        d.text((nx,cy-2),"▦ Vastgezet door KUD",font=font(17,False),fill=GREY+(255,)); cy+=22
     name = "KUD ✓" if pinned else NAMES[r.randrange(len(NAMES))]
-    identicon(card,60,cy,72,r)
-    f=font(25); d.text((150,cy),name,font=f,fill=INK+(255,)); xx=150+tw(d,name,f)+14
+    identicon(card,ax,cy,72,r)
+    f=font(25); d.text((nx,cy),name,font=f,fill=INK+(255,)); xx=nx+tw(d,name,f)+14
     qt=spec.get("qtag")
     if qt: lbl,col=QTAG[qt]; xx=chip(d,xx,cy+2,lbl,col)+10
     if spec.get("gag"): xx=chip(d,xx,cy+2,"↺ "+spec["gag"],(245,196,46),(28,28,28))+10
     d.text((xx,cy+3),f"· {r.randint(1,11)} jr",font=font(18,False),fill=GREY+(255,))
     # comment-tekst (= de quote)
-    f=font(25,False); maxw=W-150-70; words=quote.split(); line=""; yy=cy+38
+    f=font(25,False); maxw=W-nx-L; words=quote.split(); line=""; yy=cy+38
     for w in words:
         if tw(d,(line+" "+w).strip(),f)<=maxw: line=(line+" "+w).strip()
-        else: d.text((150,yy),line,font=f,fill=(35,35,35,255)); yy+=32; line=w
-    if quote: d.text((150,yy),line,font=f,fill=(35,35,35,255)); yy+=40
+        else: d.text((nx,yy),line,font=f,fill=(35,35,35,255)); yy+=32; line=w
+    if quote: d.text((nx,yy),line,font=f,fill=(35,35,35,255)); yy+=40
     # votes
     f=font(20,False)
-    d.text((150,yy),"▲",font=font(20),fill=GREY+(255,))
-    d.text((178,yy),fmt(r.randint(40,9900)),font=f,fill=GREY+(255,))
-    d.text((300,yy),"▼",font=font(20),fill=GREY+(255,))
-    d.text((360,yy),"Beantwoorden",font=f,fill=GREY+(255,))
+    d.text((nx,yy),"▲",font=font(20),fill=GREY+(255,))
+    d.text((nx+28,yy),fmt(r.randint(40,9900)),font=f,fill=GREY+(255,))
+    d.text((nx+150,yy),"▼",font=font(20),fill=GREY+(255,))
+    d.text((nx+210,yy),"Beantwoorden",font=f,fill=GREY+(255,))
 
 def make(spec,big_play=False):
     base,pad=shadow_card(); card=Image.new("RGBA",(W,H),(0,0,0,0)); d=ImageDraw.Draw(card,"RGBA")
     accent=THREADS[spec.get("accent","*")][1]
-    yt_logo(d,48,42); d.text((48,98),"▶  KUD · DOORDRAAIEN",font=font(18,False),fill=GREY+(255,))
+    yt_logo(d,104,52)
     type_badge(d,spec["type_label"],spec["glyph"],accent)
     player(card,spec.get("vid"),big_play)
     d.rectangle([VB[0],VB[1],VB[2],VB[3]],outline=accent+(255,),width=4)
@@ -180,16 +180,20 @@ def make(spec,big_play=False):
     p=PNG/f'{spec["id"]}.png'; out.save(p); return p
 
 def port_tab(card,side,idx,total,color,capped=False):
-    d=ImageDraw.Draw(card); th=104; gap=22; block=total*th+(total-1)*gap
-    cy=(VB[1]+VB[3])//2-block//2+idx*(th+gap)+th//2
-    box=[-2,cy-th//2,60,cy+th//2] if side=="L" else [W-60,cy-th//2,W+2,cy+th//2]
-    cxp=(box[0]+box[2])//2
+    """Schone koord-socket in de zijmarge: gekleurd plaatje (= koordkleur) + metalen magneet."""
+    d=ImageDraw.Draw(card,"RGBA")
+    top,bot=VB[1],VB[3]
+    cy=int(top+(bot-top)*(idx+1)/(total+1))      # netjes verdeeld over de videohoogte
+    ph=66; pw=44
+    if side=="L": box=[0,cy-ph//2,pw,cy+ph//2]; mx=pw-15
+    else: box=[W-pw,cy-ph//2,W,cy+ph//2]; mx=W-pw+15
     if capped or color=="CAP":
-        rrect(d,box,14,fill=(70,74,82,255))
-        d.text((cxp-tw(d,"■",font(34))//2,cy-22),"■",font=font(34),fill=(225,225,228,255)); return
-    _,col=THREADS[color]; rrect(d,box,14,fill=col+(255,))
-    d.ellipse([cxp-17,cy-17,cxp+17,cy+17],fill=(245,245,247,255),outline=(120,124,132,255),width=3)
-    d.ellipse([cxp-7,cy-7,cxp+7,cy+7],fill=col+(255,))
+        rrect(d,box,12,fill=(124,128,136,255))
+        d.text((mx-tw(d,"■",font(26))//2,cy-15),"■",font=font(26),fill=(245,245,247,255)); return
+    _,col=THREADS[color]
+    rrect(d,box,12,fill=col+(255,))
+    d.ellipse([mx-12,cy-12,mx+12,cy+12],fill=(239,239,241,255),outline=(108,112,120,255),width=3)
+    d.ellipse([mx-4,cy-4,mx+4,cy+4],fill=(92,96,104,255))
 
 # ---- showcase ---------------------------------------------------------------
 CARDS=[

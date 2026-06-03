@@ -102,6 +102,53 @@ Deck ±96 (54 scène incl. ~16 kleurwissel / 10 vertakking / 8 samenkomst / 12 a
 4 pilon / 8 actie) + **1 Video-begin-kaart** (of een paar, voor de chaos-variant) · hand **5** ·
 winst = lege hand.
 
+# v0.8 — Kaartsoorten-roster & speelgevoel
+
+## Welke kaartsoorten zijn toepasselijk?
+**Toelatingsregel:** een kaartsoort hoort er alleen bij als hij óf het **aantal/locatie van open
+uiteinden** verandert (+1 / 0 / −1), óf de **tegenstander** raakt. Geen kaarten die "niets doen
+behalve gelegd worden". Aanbevolen lean roster:
+
+| Soort | Aandeel | Open uiteinden | Rol |
+|------|--------|----------------|-----|
+| **Scène (kleur, recht)** | ~45% | 0 | De motor; gewoon doorleggen en dumpen. |
+| **Kleurwissel** | ~15% | 0 | De plotwending: stuurt de draad een andere kleur/subplot in. |
+| **Vertakking (split)** | ~12% | **+1** | De fun-/chaos-motor: de aflevering splitst. |
+| **Aftiteling (KOP)** | ~12% | **−1** | Sluit een video af; meerdere in het deck. |
+| **Pilon (wild)** | ~4% | 0 | Ontsnappingsklep; houdt kettingen levend. |
+| **Actie** (Knip, Cliffhanger, +1–2) | ~8% | wisselt | Interactie/sabotage. |
+| **Samenkomst (merge)** | ~4% | **−1** | *Twijfelgeval* — zie onder. |
+
+**Samenkomst** sluit je eigen outs in een afmonteer-race; houd 'm dáárom laag en **herframe als
+beloning** (merge = die kaart kwijt + je mag direct op het samengevoegde uiteinde doorbouwen). Hij
+is de **drukklep** tegen een bord dat door te veel splits explodeert. Wil je het simpeler? Schrap
+merge en laat alleen de KOP uiteinden sluiten.
+
+## Hoe maken we lange kettingen met splits fun?
+1. **Combo-beurten.** De lol zit in één beurt een hele **run** dumpen — doorleggen tot je capt of van
+   kleur wisselt. Hoe meer open uiteinden, hoe groter je dump-beurt.
+2. **Splits = parallelle dump-banen.** Een vertakking opent twee uiteinden waar je **meteen op door
+   mag bouwen** ("de aflevering explodeert in twee verhaallijnen"). Krachtig, thematisch én riskant
+   (de ander mag er ook op).
+3. **Callbacks belonen.** Sluit je quote aan op dezelfde **running gag** → leg/gooi 1 extra. Een
+   terugkerende grap voelt slim én grappig en versnelt je shed.
+4. **Uitzenden = de payoff.** Cap een lijn → lees de hele video **intro → aftiteling** hardop voor.
+   De absurde aflevering die je bouwde is de beloning (de lach), niet punten.
+5. **Snelheidsdruk.** De tegenstander kaapt je open uiteinden, capt je lijnen en Cliffhanger laat je
+   trekken — je kunt niet eindeloos veilig bouwen.
+6. **Lage cognitieve last.** Geen verplichte verhaalstructuur → je mag wild en snel bouwen.
+
+## Coherent geheel — en tegelijk juist niet
+De truc: **mechanische coherentie + narratieve incoherentie.**
+- **Coherent (structuur):** de kleur-matchregel + het intro→aftiteling-frame + "elke kleur = een
+  subplot-draad" maken dat het bord leest als *één show met meerdere verhaallijnen*. Een draad mag
+  onderweg van kleur wisselen = één video die door genres zwerft.
+- **Niet-coherent (inhoud):** de scènes zelf zijn absurde KUD-non-sequiturs; splits spawnen losse
+  subplots; de **juxtapositie is de grap**. Je dwingt geen verhaallogica af.
+- **De sweet spot:** net genoeg regel-structuur dat *plaatsen* een puzzel is, **nul** inhoud-structuur
+  zodat de humor chaotisch blijft. De gag-combo is een zachte nudge die optionele mini-coherentie
+  beloont zonder die te eisen. Precies KUD: strak gemonteerd, inhoudelijk volstrekt geschift.
+
 ## Echte quotes (belangrijk)
 De regels op de conceptkaarten zijn **origineel in KUD-stijl** geschreven als **placeholder** — geen
 letterlijke serie-citaten (auteursrecht). Elke kaart heeft een quote-**slot** om later de echte
