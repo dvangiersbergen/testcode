@@ -83,6 +83,23 @@ erbij."*, *"Pilon — niemand weet hoe dit hier kwam."* (Geen echte serie-citate
 - **100% KUD:** het is letterlijk een (kapot) YouTube-/videoformat; de 4 kleuren zijn KUD-energieën.
 - **Frisser dan de worm én dan Doordraaien:** 2D-videowand i.p.v. lineaire strip/koord.
 
+## Art-richting: "HET SIGNAAL" — de beelden lopen door (zoals Tapeworm)
+Op verzoek moeten de KUD-beelden **visueel doorlopen** over de kaartranden (zoals Tapeworms worm +
+aarde naadloos doorvloeien). Panel-besluit (ronde 3) = Tapeworms **twee doorlopende lagen**, KUD-stijl:
+
+1. **De grond** — elke kaart heeft een doorlopende **"kapotte kabel-grond"**-rand die op élke rand de
+   buurkaart raakt → basis-continuïteit overal (het aarde-equivalent).
+2. **Het signaal** — een **gekleurde storings-/kabelbaan** die elke rand op een **vast midden-kruispunt**
+   kruist (1 baan/rand) en zo **naadloos** van kaart naar kaart vloeit, mee-bocht en -splitst (de
+   worm-equivalent). Baan-kleur = verbindingskleur.
+3. **De still** is de uitzending in het venster van de grond; de signaalbaan loopt er half-transparant
+   overheen — beeld blijft dominant.
+4. **4-kleuren-systeem blijft:** de poort-nop op het kruispunt is de trigger, de doorlopende baan de
+   visuele beloning. Zo lopen **28 totaal verschillende stills** tóch naadloos in elkaar over, want de
+   continuïteit zit in de geometrisch-gefixeerde grond + baan, niet in de beeldinhoud.
+
+Zie de mock: [`examples/flow_mock.png`](examples/flow_mock.png). Detail/meeting: `meetings/ronde3.md`.
+
 ## Playtest-agenda (eerst testen)
 1. Verstikt **max-2-open** de race of houdt-ie 'm strak? 2. Domineert één lange **run** een beurt?
 3. Hoeveel **Pilon-wilds** voordat de kleurschaarste irrelevant wordt? 4. Wordt **Reprise** nagestreefd
