@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Vacatureprofiel (vacature-blitz)",
+  "type": "object",
+  "required": ["functietitel", "plaats", "skills"],
+  "properties": {
+    "functietitel":  { "type": "string", "description": "Bijv. 'Heftruckchauffeur'" },
+    "inlener":       { "type": "string", "description": "Naam van de opdrachtgever" },
+    "plaats":        { "type": "string" },
+    "uren":          { "type": "string", "description": "Bijv. '38 u/wk' of '24-32 u/wk'" },
+    "salaris":       { "type": "string", "description": "Bijv. '€15,20/u' — nooit naar boven afronden" },
+    "startdatum":    { "type": "string", "description": "ISO-datum of 'per direct'" },
+    "skills":        { "type": "array", "items": { "type": "string" }, "description": "Must-have skills, lowercase" },
+    "nice_to_have":  { "type": "array", "items": { "type": "string" } },
+    "diploma_eisen": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "eis":            { "type": "string" },
+          "onderhandelbaar": { "type": "boolean", "description": "Lijkt deze eis te laten vallen bij on-the-job opleiden?" }
+        }
+      }
+    },
+    "werktijden":    { "type": "string", "description": "Dagdienst/ploegen/weekend" },
+    "opleidbaar":    { "type": "boolean", "description": "Inlener bereid (of te overtuigen) tot on-the-job opleiden" },
+    "aannames":      { "type": "array", "items": { "type": "string" }, "description": "Velden die als [aanname] zijn ingevuld" }
+  }
+}

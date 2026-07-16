@@ -1,0 +1,26 @@
+[
+  {
+    "naam": "Voorbeeld Kandidaat",
+    "telefoon": "0612345678",
+    "woonplaats": "Tilburg",
+    "functie": "Magazijnmedewerker",
+    "skills": ["heftruck", "magazijn", "orderpicken"],
+    "beschikbaar": "direct",
+    "laatstContact": "2026-03-01",
+    "plaatsingen": 2,
+    "wilLeren": true,
+    "bron": "referral"
+  },
+  {
+    "naam": "Tweede Voorbeeld",
+    "telefoon": "0687654321",
+    "woonplaats": "Breda",
+    "functie": "Productiemedewerker",
+    "skills": ["productie", "inpakken"],
+    "beschikbaar": "per 1e van de maand",
+    "laatstContact": "2025-11-15",
+    "plaatsingen": 0,
+    "wilLeren": false,
+    "bron": "facebook"
+  }
+]
