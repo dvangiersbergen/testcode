@@ -1,0 +1,35 @@
+{
+  "functietitel": "Verkoopmedewerker (bijbaan)",
+  "inlener": "vanHaren (Deichmann Group)",
+  "plaats": "Waalwijk — Stationsstraat 10",
+  "uren": "parttime, flexibel; avonden en weekenden [aanname: 8-16 u/wk, gebruikelijk voor een bijbaan]",
+  "salaris": "all-in uurloon incl. vakantiegeld + vaste verkoopbonus €0,60/u [aanname: hoogte uurloon niet vermeld in vacature — niet zelf invullen in berichten]",
+  "startdatum": "per direct [aanname: geen startdatum vermeld]",
+  "skills": ["klantcontact", "verkoop", "kassa"],
+  "nice_to_have": ["winkel", "voorraad", "retail-ervaring (pre, niet vereist)"],
+  "diploma_eisen": [
+    {
+      "eis": "geen — winkelervaring is een pre, geen vereiste",
+      "onderhandelbaar": true
+    },
+    {
+      "eis": "kassa bedienen mag wettelijk pas vanaf 16 jaar",
+      "onderhandelbaar": false,
+      "toelichting": "wettelijke eis (arbeidstijden/verantwoordelijkheid), geen werkgeverskeuze"
+    }
+  ],
+  "werktijden": "avonduren en weekenddiensten, flexibiliteit gevraagd",
+  "opleidbaar": true,
+  "extra_voorwaarden": [
+    "personeelskorting op schoenen",
+    "vakantiegeld en vakantiedagen inbegrepen (all-in)",
+    "doorgroei naar Assistant Store Manager / Store Manager",
+    "online trainingsplatform"
+  ],
+  "aannames": [
+    "uren per week (8-16) — niet vermeld",
+    "startdatum per direct — niet vermeld",
+    "uurloonhoogte onbekend — in outreach alleen 'all-in loon + €0,60/u bonus' noemen"
+  ],
+  "bron": "https://nl.indeed.com/q-vanharen-schoenen-l-waalwijk-vacatures.html?vjk=50c6ba08249c1538 (opgehaald 2026-07-16)"
+}
